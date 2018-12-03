@@ -2,6 +2,15 @@ public class Reading {
 
     Time time;
     double degrees;
+
+    public double getDegrees() {
+        return degrees;
+    }
+
+    public double getDeltaRainFall() {
+        return deltaRainFall;
+    }
+
     double deltaRainFall;
 
     public Reading() {
