@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 import static org.junit.Assert.*;
@@ -17,6 +18,8 @@ public class Examples {
     IWeatherReport report2 = new DailyWeatherReport();
     IWeatherReport report3 = new DailyWeatherReport();
     IWeatherReport report4 = new DailyWeatherReport();
+    IWeatherReport report5 = new DailyWeatherReport();
+    IWeatherReport report6 = new DailyWeatherReport();
 
     @Before
     public void constructExamples(){
@@ -42,7 +45,12 @@ public class Examples {
 
 
 
-
+        report1 = new DailyWeatherReport(new GregorianCalendar(2018, 1,12), readings1);
+        report2 = new DailyWeatherReport(new GregorianCalendar(2018, 1,17), readings2);
+        report3 = new DailyWeatherReport(new GregorianCalendar(2018, 6,17), readings3);
+        report4 = new DailyWeatherReport(new GregorianCalendar(2018, 6,16), readings4);
+        report5 = new DailyWeatherReport(new GregorianCalendar(2018, 12,18), readings5);
+        report6 = new DailyWeatherReport(new GregorianCalendar(2018, 12,17), readings6);
     }
     @Test
     public void testAvgTemp1() {
