@@ -2,9 +2,13 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class DailyWeatherReport {
-    GregorianCalendar date;
-    LinkedList<Double> temperatures;
-    LinkedList<Double> rainfall;
+    public GregorianCalendar getDate() {return date;}
+    public LinkedList<Double> getTemperatures() {return temperatures;}
+    public LinkedList<Double> getRainfall() {return rainfall;}
+
+    private GregorianCalendar date;
+    private LinkedList<Double> temperatures;
+    private LinkedList<Double> rainfall;
 
     public DailyWeatherReport(GregorianCalendar theDate, LinkedList<Reading> theReadings) {
         this.date = theDate;
