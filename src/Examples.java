@@ -1,4 +1,5 @@
 import org.junit.Before;
+import org.junit.Test;
 
 import java.util.LinkedList;
 
@@ -43,6 +44,21 @@ public class Examples {
 
 
     }
-
+    @Test
+    public void testAvgTemp1() {
+        assertTrue(report1.getAvgTemp() == 155/3);
+    }
+    @Test
+    public void testAvgTemp2() {
+        assertTrue(report2.getAvgTemp() == 170/3);
+    }
+    @Test
+    public void testTotalRain1() {
+        assertTrue(report3.getTotalRain() == 25 + 52 + 56);
+    }
+    @Test
+    public void testTotalRain2() {
+        assertTrue(report4.getTotalRain() == 5 + 15 + 10);
+    }
 
 }
