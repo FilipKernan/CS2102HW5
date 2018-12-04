@@ -58,7 +58,22 @@ public class Examples {
         weatherMonitor.addDailyReport(report5).addDailyReport(report6);
 
     }
-
+    @Test
+    public void testAvgTemp1() {
+        assertEquals(report1.getAvgTemp(), 155.0/3.0, 0.001);
+    }
+    @Test
+    public void testAvgTemp2() {
+        assertEquals(report2.getAvgTemp(), 170.0/3.0, 0.001);
+    }
+    @Test
+    public void testTotalRain1() {
+        assertEquals(report3.getTotalRain(), 25 + 52 + 56, 0.001);
+    }
+    @Test
+    public void testTotalRain2() {
+        assertEquals(report4.getTotalRain(), 5 + 15 + 10, 0.001);
+    }
 
 
 
