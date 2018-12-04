@@ -31,6 +31,12 @@ public class Examples {
         readings4.add(new Reading(new Time( 5, 10), 50, 5));
         readings4.add(new Reading(new Time( 5, 10), 55, 15));
         readings4.add(new Reading(new Time( 5, 10), 52, 10));
+        readings5.add(new Reading(new Time(8, 40), 63, 13));
+        readings5.add(new Reading(new Time(9, 10), 56, 8));
+        readings5.add(new Reading(new Time(9, 40), 49, 22));
+        readings6.add(new Reading(new Time(11, 40), 72, 0));
+        readings6.add(new Reading(new Time(12,10), 79, 0));
+        readings6.add(new Reading(new Time(12,40), 83, 0));
 
 
 
