@@ -10,6 +10,8 @@ public class Examples {
     LinkedList<Reading> readings2 = new LinkedList<>();
     LinkedList<Reading> readings3 = new LinkedList<>();
     LinkedList<Reading> readings4 = new LinkedList<>();
+    LinkedList<Reading> readings5 = new LinkedList<>();
+    LinkedList<Reading> readings6 = new LinkedList<>();
     IWeatherReport report1 = new DailyWeatherReport();
     IWeatherReport report2 = new DailyWeatherReport();
     IWeatherReport report3 = new DailyWeatherReport();
