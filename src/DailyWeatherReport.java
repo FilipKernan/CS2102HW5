@@ -11,6 +11,11 @@ public class DailyWeatherReport implements IWeatherReport{
     private LinkedList<Double> temperatures;
     private LinkedList<Double> rainfall;
 
+    public DailyWeatherReport(){
+        LinkedList<Double> tempReadings = new LinkedList<>();
+        LinkedList<Double> rainReadings = new LinkedList<>();
+    }
+
 
     public DailyWeatherReport(GregorianCalendar theDate, LinkedList<Reading> theReadings) {
         this.date = theDate;
