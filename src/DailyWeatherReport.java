@@ -1,7 +1,7 @@
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class DailyWeatherReport {
+public class DailyWeatherReport extends WeatherReport{
     GregorianCalendar date;
     LinkedList<Double> temperatures;
     LinkedList<Double> rainfall;
@@ -17,8 +17,8 @@ public class DailyWeatherReport {
         this.temperatures = tempReadings;
         this.rainfall = rainReadings;
     }
-
-    public double getAvgTemp() {
+    @Override
+    public double getAvgTemp() throws ArithmeticException{
         double totalTemp = 0;
         double numTemps = 0;
         for(int i = 0; i < this.temperatures.size(); i++) {
@@ -27,7 +27,7 @@ public class DailyWeatherReport {
         }
         return totalTemp/numTemps;
     }
-
+    @Override
     public double getTotalRain() {
         double totalRain = 0;
         for(int i = 0; i < this.rainfall.size(); i++) {
