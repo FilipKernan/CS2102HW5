@@ -8,11 +8,11 @@ public class WeatherMonitor {
         this.reports = new LinkedList<>();
     }
 
-    public double averageTempForMonth(){
+    public double averageTempForMonth(int month){
         return 0.0;
     }
 
-    public double totalRailfallForMOnth(){
+    public double totalRailfallForMonth(int month){
         return 0.0;
     }
 
