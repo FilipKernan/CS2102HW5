@@ -1,22 +1,38 @@
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class WeatherMonitor {
 
-    LinkedList<DailyWeatherReport> reports;
+    private LinkedList<IWeatherReport> reports;
 
     public WeatherMonitor() {
         this.reports = new LinkedList<>();
     }
 
-    public double averageTempForMonth(int month){
-        return 0.0;
+    public double averageTempForMonth(int month) throws ArithmeticException{
+        int count = 0;
+        double sum = 0;
+        for (IWeatherReport report: reports) {
+            if (report.getDate().get(GregorianCalendar.MONTH) == month){
+                count++;
+                sum += report.getAvgTemp();
+            }
+        }
+        return sum/count;
+
     }
 
     public double totalRailfallForMonth(int month){
-        return 0.0;
+        double sum = 0;
+        for (IWeatherReport report: reports) {
+            if (report.getDate().get(GregorianCalendar.MONTH) == month){
+                sum += report.getTotalRain();
+            }
+        }
+        return sum;
     }
 
-    public WeatherMonitor addDailyReport(DailyWeatherReport report){
+    public WeatherMonitor addDailyReport(IWeatherReport report){
         reports.add(report);
         return this;
     }

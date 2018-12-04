@@ -1,19 +1,17 @@
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class DailyWeatherReport {
+public class DailyWeatherReport implements IWeatherReport{
     /**
      * This is a getter method for the date
      * @return returns the date
      */
     public GregorianCalendar getDate() {return date;}
-
     /**
      * This is a getter method for the temperature
      * @return returns the temperature
      */
     public LinkedList<Double> getTemperatures() {return temperatures;}
-
     /**
      * This is a getter method for the rainfall
      * @return returns the rainfall
@@ -35,12 +33,11 @@ public class DailyWeatherReport {
         this.temperatures = tempReadings;
         this.rainfall = rainReadings;
     }
-
     /**
      * This is a method that expects a weather report and returns the average temperature
      * @return average temperature over a list of temperatures
      */
-    public double getAvgTemp() {
+    public double getAvgTemp() throws ArithmeticException{
         double totalTemp = 0;
         double numTemps = 0;
         for(int i = 0; i < this.temperatures.size(); i++) {
@@ -49,7 +46,6 @@ public class DailyWeatherReport {
         }
         return totalTemp/numTemps;
     }
-
     /**
      * This is a method that expects a weather report and returns the total rainfall
      * @return total rainfall from a list of periodic rainfalls
@@ -61,6 +57,4 @@ public class DailyWeatherReport {
         }
         return totalRain;
     }
-
-
 }
