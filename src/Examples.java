@@ -1,4 +1,6 @@
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
@@ -19,6 +21,7 @@ public class Examples {
     IWeatherReport report4 = new DailyWeatherReport();
     IWeatherReport report5 = new DailyWeatherReport();
     IWeatherReport report6 = new DailyWeatherReport();
+    WeatherMonitor weatherMonitor = new WeatherMonitor();
 
     @Before
     public void constructExamples(){
@@ -44,13 +47,58 @@ public class Examples {
 
 
 
-        report1 = new DailyWeatherReport(new GregorianCalendar(2018, 1,12), readings1);
-        report2 = new DailyWeatherReport(new GregorianCalendar(2018, 1,17), readings2);
-        report3 = new DailyWeatherReport(new GregorianCalendar(2018, 6,17), readings3);
-        report4 = new DailyWeatherReport(new GregorianCalendar(2018, 6,16), readings4);
-        report5 = new DailyWeatherReport(new GregorianCalendar(2018, 12,18), readings5);
-        report6 = new DailyWeatherReport(new GregorianCalendar(2018, 12,17), readings6);
+        report1 = new DailyWeatherReport(new GregorianCalendar(2018, 0,12), readings1);
+        report2 = new DailyWeatherReport(new GregorianCalendar(2018, 0,17), readings2);
+        report3 = new DailyWeatherReport(new GregorianCalendar(2018, 5,17), readings3);
+        report4 = new DailyWeatherReport(new GregorianCalendar(2018, 5,16), readings4);
+        report5 = new DailyWeatherReport(new GregorianCalendar(2018, 11,18), readings5);
+        report6 = new DailyWeatherReport(new GregorianCalendar(2018, 11,17), readings6);
+
+        weatherMonitor.addDailyReport(report1).addDailyReport(report2).addDailyReport(report3).addDailyReport(report4);
+        weatherMonitor.addDailyReport(report5).addDailyReport(report6);
+
     }
 
+
+
+
+
+    @Test
+    public void avgTempForMonth1(){
+        assertEquals(weatherMonitor.averageTempForMonth(0), 54.16, 0.5 );
+
+    }
+    @Test
+    public void avgTempForMonth6(){
+        assertEquals(weatherMonitor.averageTempForMonth(5), 53.33, 0.5 );
+    }
+    @Test
+    public void avgTempForMonth12(){
+        assertEquals(weatherMonitor.averageTempForMonth(11), 67, 0.5 );
+    }
+    @Test
+    public void avgTempForMonth7(){
+        assertTrue(weatherMonitor.averageTempForMonth(7) == -1);
+    }
+
+
+
+    @Test
+    public void rainfallForMonth1(){
+        assertEquals(weatherMonitor.totalRailfallForMonth(0), 188, 0.5 );
+
+    }
+    @Test
+    public void rainfallForMonth6(){
+        assertEquals(weatherMonitor.totalRailfallForMonth(5), 163, 0.5 );
+    }
+    @Test
+    public void rainfallForMonth12(){
+        assertEquals(weatherMonitor.totalRailfallForMonth(11), 43, 0.5 );
+    }
+    @Test
+    public void rainfallForMonth7(){
+        assertTrue(weatherMonitor.totalRailfallForMonth(7) == 0);
+    }
 
 }
