@@ -16,7 +16,7 @@ public class Examples {
     IWeatherReport report4 = new DailyWeatherReport();
 
     @Before
-    public constructExamples(){
+    public void constructExamples(){
         readings1.add(new Reading(new Time( 5, 10), 50, 5));
         readings1.add(new Reading(new Time( 5, 30), 50, 5));
         readings1.add(new Reading(new Time( 5, 20), 55, 5));
