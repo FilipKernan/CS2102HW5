@@ -2,7 +2,7 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 
-public class DailyWeatherReport extends WeatherReport{
+public class DailyWeatherReport implements IWeatherReport{
     public GregorianCalendar getDate() {return date;}
     public LinkedList<Double> getTemperatures() {return temperatures;}
     public LinkedList<Double> getRainfall() {return rainfall;}
